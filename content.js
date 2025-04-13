@@ -7,8 +7,10 @@ chrome.runtime.onMessage.addListener(async (msg) => {
     console.log("ironman  Received message:", msg.type);
     switch (msg.type) {
         case "unfollow": {
-            unFollowCompany();
-            submitApplication();
+
+            if (unFollowCompany()) {
+                submitApplication();
+            };
             break;
         }
     }
@@ -26,14 +28,18 @@ function unFollowCompany() {
 
         // To unselect (uncheck) the checkbox
         checkbox.checked = false;
+        return true;
     } else {
         console.error("Checkbox element not found!");
+        return false;
     }
 }
 
 function submitApplication() {
-    // Select the button using its aria-label attribute
-    const submitButton = document.querySelector('button[aria-label="Submit application"]');
+    // Select the button using more robust selectors
+    const submitButton = document.querySelector(
+        'button[aria-label="Submit application"][type="button"]'
+    );
 
     // Check if the button exists before clicking it
     if (submitButton) {
