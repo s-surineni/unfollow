@@ -3,7 +3,7 @@
  * @type {Object}
  */
 export const config = {
-    matches: ["<all_urls>"],
+    matches: ["https://www.linkedin.com/*"],
     all_frames: true
 };
 

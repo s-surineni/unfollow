@@ -2,7 +2,7 @@
   "name": "unfollow",
   "displayName": "Unfollow",
   "version": "0.0.1",
-  "description": "Unfollow while applying for companies",
+  "description": "Unfollow automatically while applying for companies on linkedin",
   "author": "sampath.surineni@gmail.com",
   "scripts": {
     "dev": "plasmo dev",
